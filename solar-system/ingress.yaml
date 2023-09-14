@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: solar-ingress
+  labels:
+    app: solar-system
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  rules:
+  - host: solar.cloud4azureaws.link
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: solar-system-service
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - solar.cloud4azureaws.link
+    secretName: solar-secret
