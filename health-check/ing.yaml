@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: health-ingress
+  namespace: health-check
   labels:
     app: health-system
   annotations:
