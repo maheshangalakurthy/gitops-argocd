@@ -9,14 +9,14 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: solar.cloud4azureaws.link
+  - host: solar1.cloud4azureaws.link
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: solar1-system-service
+            name: solar-system-service
             port:
               number: 80
   tls:
