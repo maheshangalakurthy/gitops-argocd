@@ -16,10 +16,10 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: solar-system-service
+            name: solar1-system-service
             port:
               number: 80
   tls:
   - hosts:
-    - solar.cloud4azureaws.link
-    secretName: solar-secret
+    - solar1.cloud4azureaws.link
+    secretName: solar1-secret
