@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: geocentric-ingress
+  labels:
+    app: health-system
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  rules:
+  - host: geocentric.cloud4azureaws.link
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: random-shapes-svc
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - geocentric.cloud4azureaws.link
+    secretName: geocentric-secret
