@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: random-shapes-svc
+            name: geocentric-model-svc
             port:
               number: 80
   tls:
